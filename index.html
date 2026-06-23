@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SwiftAssess Invigilator Guide</title>
+
+<style>
+
+:root{
+    --primary:#0D3B66;
+    --secondary:#2F80ED;
+    --accent:#F2994A;
+    --light:#ffffff;
+    --bg:#f4f8fb;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:#222;
+}
+
+header{
+    background:white;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+
+.logo-row{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.logo{
+    height:80px;
+    object-fit:contain;
+}
+
+h1{
+    margin-top:15px;
+    color:var(--primary);
+    font-size:2rem;
+}
+
+.subtitle{
+    margin-top:10px;
+    color:#555;
+}
+
+.controls{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin:25px;
+    flex-wrap:wrap;
+}
+
+button{
+    border:none;
+    background:var(--primary);
+    color:white;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:var(--secondary);
+}
+
+input{
+    padding:10px;
+    width:280px;
+    border:1px solid #ccc;
+    border-radius:10px;
+}
+
+.cards{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.shortcut{
+    display:inline-block;
+    background:var(--accent);
+    color:white;
+    font-size:1.3rem;
+    font-weight:bold;
+    padding:10px 18px;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.card p{
+    margin-bottom:8px;
+    line-height:1.7;
+}
+
+.note{
+    background:#eef6ff;
+    padding:10px;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    color:#666;
+}
+
+.hidden{
+    display:none;
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:1.5rem;
+}
+
+.logo{
+height:60px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo-row">
+
+<!-- استبدل الملفات التالية بالشعارات بعد إزالة الخلفية -->
+
+<img src="education-logo.png" class="logo" alt="Education">
+
+<img src="swiftassess-logo.png" class="logo" alt="SwiftAssess">
+
+<img src="alshamkhah-logo.png" class="logo" alt="School">
+
+</div>
+
+<h1 id="title-ar">
+دليل اختصارات الملاحظ لمعالجة مشكلات امتحانات SwiftAssess
+</h1>
+
+<h1 id="title-en" class="hidden">
+SwiftAssess Invigilator Troubleshooting Guide
+</h1>
+
+<p class="subtitle" id="sub-ar">
+بطاقات تفاعلية للمساعدة في حل المشكلات التقنية أثناء الامتحان
+</p>
+
+<p class="subtitle hidden" id="sub-en">
+Interactive cards to help invigilators solve exam issues quickly
+</p>
+
+</header>
+
+<div class="controls">
+
+<button onclick="setArabic()">العربية</button>
+<button onclick="setEnglish()">English</button>
+
+<input type="text"
+id="search"
+placeholder="بحث / Search"
+onkeyup="searchCards()">
+
+</div>
+
+<div class="cards">
+
+<!-- Card 1 -->
+
+<div class="card">
+
+<div class="shortcut">Ctrl + Shift + R</div>
+
+<div class="ar-content">
+
+<h3>إعادة تحميل قسرية</h3>
+
+<p>تحديث الصفحة مع تجاهل الملفات المؤقتة.</p>
+
+<div class="note">
+تستخدم عند تجمد شاشة الامتحان.
+</div>
+
+</div>
+
+<div class="en-content hidden">
+
+<h3>Hard Refresh</h3>
+
+<p>Refresh page while ignoring cached files.</p>
+
+<div class="note">
+Use when the exam screen freezes.
+</div>
+
+</div>
+
+</div>
+
+<!-- Card 2 -->
+
+<div class="card">
+
+<div class="shortcut">Ctrl + F5</div>
+
+<div class="ar-content">
+
+<h3>إعادة تحميل كاملة</h3>
+
+<p>إعادة تحميل الجلسة الحالية.</p>
+
+<div class="note">
+بديل لإعادة التحميل القسرية.
+</div>
+
+</div>
+
+<div class="en-content hidden">
+
+<h3>Full Refresh</h3>
+
+<p>Reload current session completely.</p>
+
+<div class="note">
+Alternative hard refresh method.
+</div>
+
+</div>
+
+</div>
+
+<!-- Card 3 -->
+
+<div class="card">
+
+<div class="shortcut">Ctrl + Shift + Esc</div>
+
+<div class="ar-content">
+
+<h3>إدارة المهام</h3>
+
+<p>فتح مدير المهام مباشرة.</p>
+
+<div class="note">
+لإغلاق التطبيقات المتوقفة.
+</div>
+
+</div>
+
+<div class="en-content hidden">
+
+<h3>Task Manager</h3>
+
+<p>Open Task Manager directly.</p>
+
+<div class="note">
+Close frozen applications.
+</div>
+
+</div>
+
+</div>
+
+<!-- Card 4 -->
+
+<div class="card">
+
+<div class="shortcut">Ctrl + Shift + Q</div>
+
+<div class="ar-content">
+
+<h3>إعادة تشغيل المتصفح</h3>
+
+<p>إغلاق المتصفح وإعادة تشغيله.</p>
+
+<div class="note">
+عند توقف المتصفح عن الاستجابة.
+</div>
+
+</div>
+
+<div class="en-content hidden">
+
+<h3>Restart Browser</h3>
+
+<p>Close and restart browser.</p>
+
+<div class="note">
+Use when browser becomes unresponsive.
+</div>
+
+</div>
+
+</div>
+
+<!-- Card 5 -->
+
+<div class="card">
+
+<div class="shortcut">Ctrl + Alt + Delete</div>
+
+<div class="ar-content">
+
+<h3>خيارات النظام</h3>
+
+<p>الوصول إلى مدير المهام وخيارات النظام.</p>
+
+<div class="note">
+للمعالجة المتقدمة للمشكلات.
+</div>
+
+</div>
+
+<div class="en-content hidden">
+
+<h3>System Options</h3>
+
+<p>Access system options and Task Manager.</p>
+
+<div class="note">
+Advanced troubleshooting.
+</div>
+
+</div>
+
+</div>
+
+<!-- Card 6 -->
+
+<div class="card">
+
+<div class="shortcut">Alt + Tab</div>
+
+<div class="ar-content">
+
+<h3>تبديل النوافذ</h3>
+
+<p>التنقل بين البرامج المفتوحة.</p>
+
+<div class="note">
+للتحقق من التطبيقات الأخرى.
+</div>
+
+</div>
+
+<div class="en-content hidden">
+
+<h3>Switch Windows</h3>
+
+<p>Switch between open applications.</p>
+
+<div class="note">
+Check other running apps.
+</div>
+
+</div>
+
+</div>
+
+<!-- Card 7 -->
+
+<div class="card">
+
+<div class="shortcut">F11</div>
+
+<div class="ar-content">
+
+<h3>الخروج من ملء الشاشة</h3>
+
+<p>التبديل بين الوضع العادي وملء الشاشة.</p>
+
+<div class="note">
+للتحقق من المتصفح والنظام.
+</div>
+
+</div>
+
+<div class="en-content hidden">
+
+<h3>Full Screen Toggle</h3>
+
+<p>Enter or exit full screen mode.</p>
+
+<div class="note">
+Check browser and system controls.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+© Alshamkhah City School | SwiftAssess Support Guide
+
+</footer>
+
+<script>
+
+function setArabic(){
+
+document.documentElement.lang='ar';
+document.documentElement.dir='rtl';
+
+document.getElementById('title-ar').classList.remove('hidden');
+document.getElementById('sub-ar').classList.remove('hidden');
+
+document.getElementById('title-en').classList.add('hidden');
+document.getElementById('sub-en').classList.add('hidden');
+
+document.querySelectorAll('.ar-content').forEach(e=>{
+e.classList.remove('hidden');
+});
+
+document.querySelectorAll('.en-content').forEach(e=>{
+e.classList.add('hidden');
+});
+
+}
+
+function setEnglish(){
+
+document.documentElement.lang='en';
+document.documentElement.dir='ltr';
+
+document.getElementById('title-en').classList.remove('hidden');
+document.getElementById('sub-en').classList.remove('hidden');
+
+document.getElementById('title-ar').classList.add('hidden');
+document.getElementById('sub-ar').classList.add('hidden');
+
+document.querySelectorAll('.ar-content').forEach(e=>{
+e.classList.add('hidden');
+});
+
+document.querySelectorAll('.en-content').forEach(e=>{
+e.classList.remove('hidden');
+});
+
+}
+
+function searchCards(){
+
+let filter=document.getElementById('search').value.toLowerCase();
+
+let cards=document.querySelectorAll('.card');
+
+cards.forEach(card=>{
+
+if(card.innerText.toLowerCase().includes(filter)){
+card.style.display='block';
+}else{
+card.style.display='none';
+}
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
